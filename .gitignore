@@ -6,3 +6,4 @@
 *.wasm
 build
 .build
+.swiftpm

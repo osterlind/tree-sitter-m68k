@@ -10,31 +10,32 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .target(name: "TreeSitterM68k",
-                path: ".",
-                exclude: [
-                    "binding.gyp",
-                    "bindings",
-                    "Cargo.toml",
-                    "corpus",
-                    "examples",
-                    "grammar.js",
-                    "LICENSE",
-                    "Makefile",
-                    "package.json",
-                    "README.md",
-                    "src/grammar.json",
-                    "src/node-types.json",
-                    // any additional files to exclude 
-                ],
-                sources: [
-                    "src/parser.c",
-//                    "src/scanner.cc", // this might be `scanner.c` or not present at all
-                ],
-                resources: [
-                    .copy("queries")
-                ],
-                publicHeadersPath: "bindings/swift",
-                cSettings: [.headerSearchPath("src")])
+        .target(
+            name: "TreeSitterM68k",
+            path: ".",
+            exclude: [
+                "binding.gyp",
+                "bindings",
+                "Cargo.toml",
+                "corpus",
+                "grammar.js",
+                "LICENSE.md",
+                "package-lock.json",
+                "package.json",
+                "README.md",
+                "src/grammar.json",
+                "src/node-types.json"
+            ],
+            sources: [
+                "src/parser.c"
+            ],
+            resources: [
+                .copy("queries")
+            ],
+            publicHeadersPath: "bindings/swift",
+            cSettings: [
+                .headerSearchPath("src")
+            ]
+        )
     ]
 )
